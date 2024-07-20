@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> Walking Trails in Dublin</title>
+  
+
+  <link rel="stylesheet" href="css/main1.css">
+</head>
+<body onload="extractTourData(1)">
+  <div id="wrapper">
+  <header>
+    <h1 id="tour-title"> PLACEHOLDER</h1>
+</header>
+    <nav> 
+      <ul>
+        <li><a href="index.html">Home </a></li>
+        <li><a href="portobello.html">Portobello</a></li>
+        <li><a href="rathgar.html">Rathgar</a></li>
+        <li><a href="sandymount.html">Sandymount</a></li>
+        <li><a href="rathmines.html">Rathmines</a></li>
+        <li><a href="harold.html">Harolds Cross</a></li>
+      </ul>
+
+      <p><b>************************</b></p>
+      
+      <p> <b>TOURS OF PORTOBELLO</b></p>
+      <p> Guided tours of Portobello<br>
+      take place every Monday and <br>
+      Wednesday at 10am and 2pm.</p>
+
+      <p>To check when the next <br>
+        available tour is:<br>
+      <b>CLICK BELOW:</b> </p> 
+
+        
+  <button type="button" onclick= "checkAvailability(1)">     Check for next available tour - August 2024   </button>
+        <p><b>************************</b></p>
+        <div id="div_availabledates"></div>
+    </nav>
+  
+  <main>
+      <h2>Sights to See on Tour</h2>
+      <h2> (Tick off and cross off each site as you visit as a record)</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Route</th>
+            <th scope="col">Items of Interest</th>
+          </tr>
+        </thead>
+        <tbody id="trails"></tbody>
+      </table>
+    </main>
+
+    <aside>
+      <h3>Map of Portobello</h3>
+      
+      <img  src="images/mapportobello.jpg" height="270px"  width="270px" alt="Portobello"onmouseover="modifyImage()" onmouseleave="modifyImage()" src="mapportobello.jpg"   id="imagechange" >
+      <p> Hover over map to see more detail</p>
+      <p>*************************</p>
+      <h3>Join one of Guided Tours</h3>
+      <div id="mtoast" onclick="this.style.display='none'"></div>
+  <form method="get">
+    E-mail:
+    <input type="text" name="email" id="email" maxlength="25" size="20"  placeholder="you@yourdomain.com">
+    <br>
+    Name: <input type="text" name="name" id="name" size="20" placeholder="your first and last name"><br>
+
+      <label for="myDate">Choose a Date</label>
+      <input type="date" id="myDate">
+      <br><br>
+    Comments: (Please provide alternate dates for tour as well)
+    <textarea name="comments" rows="2" cols="30"></textarea>
+    <br>
+    <button type="button" onclick= "responseShowMessage(1);">     Sign me up for a tour  </button> 
+    
+    <input type="reset">
+    </form>
+
+    <p>************************</p>
+    <form>
+    <h3> <b>Customer rating of tour </b></h3>
+    <p> Please rate this tour</p>
+      <form method="get">
+        E-mail:
+        <input type="text" name="email" id="email" maxlength="25" size="20"   placeholder="you@yourdomain.com">
+        <br>
+        Name: <input type="text" name="name" size="20"  placeholder="your first and last name"><br>
+        Comment on Rating:
+        <textarea name="comments" rows="3" cols="30"></textarea>
+        <br>
+        <label for="myRating">Rating (1-10):</label>
+          <input type="range" name="myRating" id="myRating" min="1" max="10"><br><br>
+          <button type="button" onclick= "responseRating();">     Submit your rating  </button>
+          
+        <input type="reset">
+        
+        </form>
+    
+    <p>***********************</p>
+      </aside>
+  
+
+  <script src="javascript/data.js"></script>
+  <script src="javascript/dataExtraction.js"></script>
+  <script src="javascript/response.js"></script>
+  
+  <footer><p> The sources for the above page are:</p><a href="https://en.wikipedia.org/wiki/portobello"target=_blank> 
+  Wikipedia</a> and <a href="https://www.dublincity.ie"target=_blank> Dublin City Council</a>
+  </footer>
+
+</div>
+</body>
+
+</html>

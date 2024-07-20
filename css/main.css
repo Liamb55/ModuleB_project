@@ -1,0 +1,142 @@
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Verdana, Arial, sans-serif;
+  margin: 10px;
+}
+
+header {
+  background-color: #f7f1e3;
+  background-repeat: no-repeat;
+  height: 150px;
+}
+
+h1 {
+  text-align: center;
+  color: #000000;
+  font-size: 300%;
+  text-shadow: 2px 2px 2px #000000;
+}
+h2 {
+  color: #2c2c54;
+}
+
+h3 {text-align:center;
+    color:#2c2c54;
+    }
+
+/* Name Grid Areas */
+header {
+  grid-area: h;
+}
+nav {
+  grid-area: n;
+}
+main {
+  grid-area: m;
+}
+aside {
+  grid-area: a;
+}
+footer {
+  grid-area: f;
+}
+#wrapper {
+  background-color: #f7f1e3;
+  color: #0e0363;
+  display: grid;
+  grid-template:
+    "h "
+    "n "
+    "m"
+    "f";
+}
+
+
+nav {
+  font-size: 120%;
+}
+
+nav ul {
+  margin-top: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+nav ul {
+  list-style-type: none;
+}
+nav li {
+  width: 20%;
+  min-width: 160px;
+  font-size: 110%;
+  text-align: center;
+  background-color: #003c58;
+  margin: 10px;
+  padding: 10px;
+}
+nav a {
+  text-decoration: none;
+}
+nav a:link {
+  color: #f7f1e3;
+}
+nav a:visited {
+  color: #b9edf0;
+}
+nav a:hover {
+  color: #375657;
+}
+
+
+main {
+  padding: 0 10px 10px;
+  margin:30px;
+}
+
+aside {
+  display: none;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  font-style: italic;
+  padding: 20px;
+}
+
+@media (min-width: 560px) {
+  #wrapper {
+    grid-template:
+      " h   h "
+      " n   n "
+      " m   a "
+      " f   f "
+      / 60% 40%;
+  }
+  aside {
+    display: block;
+  }
+}
+@media (min-width: 1024px) {
+ 
+  
+  #wrapper {
+    grid-template:
+      " h   h   h"
+      " n   m   a"
+      " f   f   f"
+      / 150px 1fr 20%;
+  } 
+  
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+}
